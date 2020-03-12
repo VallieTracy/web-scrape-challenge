@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+      <!-- Top Section (Jumbotron & Mars Top News + Teaser Text) -->
+      <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button" style="background-color: rgb(72, 19, 218);"><b>Scrape New Data</b></a></p>
+      </div>
+      
+      <h3><b><u>Latest Mars News</u></b></h3>
+      <h4><b>{{ mars.Top_News }}</b></h4>
+      <h5>{{ mars.Teaser_P }}</h5>
+      <br>
+      
+      <!-- Featured Image + Twitter Weather + Profile Table -->
+      <div class="container-fluid">
+        
+        <div class="col-lg-8">
+          <h3><b>Featured Mars Image</b></h3>
+          <img src="{{ mars.Featured_Image }}" alt="Feat Img" class="img-thumbnail float-left w-50 h-50">
+        </div> 
+        
+        <div class="col-lg-4">
+          <h4><b>Current Weather on Mars:</b></h4>
+          <br>
+          <p>{{ mars.Mars_Weather }}</p>
+          <br>
+          <h4><b><u>Mars Facts</u></b></h4>
+          <h4>{{ mars.Mars_Info_Table | safe}}</h4>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Hemispheres -->
+      <!-- Container below NOT fluid in order to place images center of page without having to specify -->
+      <div class="container text-center">
+        <h1 class="text-center"><b>Mars Hemispheres</b></h1>
+        <hr>
+        
+        <!-- First Row of Hemispheres -->
+        
+        <div class="row">
+          <!-- First column -->
+          <div class="col-lg-6">
+            <!-- Comment applies to all four images: Need the style specification, otherwise images large & overlap -->
+            <img class="card-img-top float-right" style="width: 100%; height: 100%;" src="{{ mars.Image_One }}" alt="First_Hemi_Img">
+            <h4><b>{{ mars.Title_One }}</b></h4>
+          </div>
+          
+          <!-- Second column -->
+          <div class="col-lg-6">
+            <img class="card-img-top float-right" style="width: 100%; height: 100%;" src="{{ mars.Image_Two }}" alt="First_Hemi_Img">
+            <h4><b>{{ mars.Title_Two }}</b></h4>
+          </div>
+        </div>
+        
+        <!-- Second Row of Hemispheres -->
+        <div class="row">
+          <!-- First column -->
+          <div class="col-lg-6">
+            <img class="card-img-top float-right" style="width: 100%; height: 100%;" src="{{ mars.Image_Three }}" alt="First_Hemi_Img">
+            <h4><b>{{ mars.Title_Three }}</b></h4>
+          </div>
+          
+          <!-- Second column -->
+          <div class="col-lg-6">
+            <img class="card-img-top float-right" style="width: 100%; height: 100%;" src="{{ mars.Image_Four }}" alt="First_Hemi_Img">
+            <h4><b>{{ mars.Title_Four }}</b></h4>
+          </div>
+        </div>
+
+      </div>
+          
+    </div>
+</body>
+</html>
+  
